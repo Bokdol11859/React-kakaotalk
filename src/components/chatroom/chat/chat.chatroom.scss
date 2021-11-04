@@ -1,0 +1,30 @@
+.buttons {
+  display: flex;
+  width: calc(100% - 70px);
+  position: fixed;
+  bottom: 4rem;
+
+  img {
+    padding-left: 8px;
+    padding-right: 8px;
+    width: 20px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .right {
+    margin-left: auto;
+  }
+}
+
+.input {
+  opacity: 100%;
+  width: calc(100% - 70px);
+  height: 3rem;
+  bottom: 0px;
+  position: fixed;
+}
+
+.Chat {
+  margin-left: 10px;
+}
