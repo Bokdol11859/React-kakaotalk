@@ -45,10 +45,17 @@ function Buttons() {
   );
 }
 
-function Form({ id, userId, chats, setChats }) {
+type FormProps = {
+  id: number;
+  userId: number;
+  chats: any;
+  setChats: Function;
+};
+
+function Form({ id, userId, chats, setChats }: FormProps) {
   const [value, setValue] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     //prevent reloading
     e.preventDefault();
     //no submission if empty
@@ -56,13 +63,6 @@ function Form({ id, userId, chats, setChats }) {
       window.alert("입력이 없습니다.");
       return;
     }
-    // window.alert("user:" + user);
-    // window.alert("value:" + value);
-    // console.log(id);
-    // console.log(setChats);
-    // console.log(userId);
-    // console.log(chats);
-    // console.log(value);
     let tempChats = [...chats];
     tempChats[id - 1].chats.push({
       id: userId,
